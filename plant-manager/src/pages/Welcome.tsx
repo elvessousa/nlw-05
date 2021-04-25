@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     color: colors.heading,
     fontFamily: fonts.heading,
     fontSize: 30,
-    fontWeight: 'bold',
     lineHeight: 38,
     marginTop: 30,
     textAlign: 'center',
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: colors.heading,
-    fontFamily: fonts.heading,
+    fontFamily: fonts.text,
     fontSize: 18,
     paddingHorizontal: 20,
     textAlign: 'center',
