@@ -4,6 +4,8 @@
 
 #### Next Level Week #5
 
+![Screenshot](../.github/plantmanager.jpg)
+
 ## Sobre o projeto
 
 O **PlantManager** é um aplicativo para facilitar a administração de suas plantas.
