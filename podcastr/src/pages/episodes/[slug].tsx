@@ -76,6 +76,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     description: data.description,
     url: data.file.url,
   };
+
   return {
     props: { episode },
     revalidate: 60 * 60 * 24, // 24 hours
@@ -83,8 +84,25 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const { data } = await api.get('episodes', {
+    params: {
+      _limit: 2,
+      _sort: 'published_at',
+      _order: 'desc',
+    },
+  });
+
+  const paths = data.map((episode) => ({
+    params: {
+      slug: episode.id,
+    },
+  }));
+
+  // ISR -> Incremental Static Regeneration
+  // Fallback true: Tries to fetch data on client side (loading state needed)
+  // Fallback 'blocking': Creates the page on server on access
   return {
-    paths: [],
+    paths,
     fallback: 'blocking',
   };
 };

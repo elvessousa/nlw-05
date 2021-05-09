@@ -25,6 +25,10 @@
     &:empty {
       opacity: 0.5;
     }
+
+    .empty {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -33,12 +37,38 @@
   height: 20rem;
   border: 1.5px dashed var(--purple-300);
   border-radius: 1.5rem;
-  background: linear-gradient(145deg, rgba(145, 100, 250, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    145deg,
+    rgba(145, 100, 250, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   padding: 4rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.currentEpisode {
+  text-align: center;
+
+  img {
+    border-radius: 1.5rem;
+  }
+
+  strong {
+    display: block;
+    margin-top: 2rem;
+    font: 600 1.25rem Lexend, sans-serif;
+    line-height: 1.75rem;
+  }
+
+  span {
+    display: block;
+    margin-top: 1rem;
+    opacity: 0.6;
+    line-height: 1.5rem;
+  }
 }
 
 .progress {
@@ -61,7 +91,7 @@
       height: 4px;
       background: var(--purple-300);
       border-radius: 2px;
-    } 
+    }
   }
 }
 
@@ -76,6 +106,16 @@
     background: transparent;
     border: 0;
     font-size: 0;
+    transition: filter 0.2s;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    &:hover:not(:disabled) {
+      filter: brightness(0.85);
+    }
 
     &.playButton {
       width: 4rem;
@@ -83,9 +123,9 @@
       border-radius: 1rem;
       background: var(--purple-400);
 
+      &:hover:not(:disabled) {
+        filter: brightness(0.95);
+      }
     }
   }
-
 }
-
-
