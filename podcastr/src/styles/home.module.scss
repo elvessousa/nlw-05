@@ -17,18 +17,19 @@
     gap: 1.5rem;
     padding: 0;
 
+    .episodeImage {
+      border-radius: 1rem;
+    }
+
     li {
+      display: grid;
+      grid-template-columns: 5rem auto;
       background: var(--white);
       border: 1px solid var(--gray-100);
       padding: 1.25rem;
       border-radius: 1.5rem;
       position: relative;
-      display: flex;
       align-items: center;
-
-      .episodeImage {
-        border-radius: 1rem;
-      }
 
       .episodeDetails {
         margin-left: 1rem;
