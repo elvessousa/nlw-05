@@ -10,6 +10,9 @@ defmodule InmanaWeb.Router do
 
     get "/", WelcomeController, :index
     post "/restaurants", RestaurantsController, :create
+
+    # Resources: creates routes automatically
+    resources "/supplies", SuppliesController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development
@@ -27,4 +30,8 @@ defmodule InmanaWeb.Router do
       live_dashboard "/dashboard", metrics: InmanaWeb.Telemetry
     end
   end
+
+  if Mix.env() == :dev do
+    forward "/emails", Bamboo.SentEmailViewerPlug
+  end 
 end

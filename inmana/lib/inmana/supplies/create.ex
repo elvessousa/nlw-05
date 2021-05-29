@@ -1,17 +1,18 @@
-defmodule Inmana.Restaurants.Create do
+
+defmodule Inmana.Supplies.Create do
   @moduledoc """
     Create a restuarant in the database
   """
-  alias Inmana.{Repo, Restaurant}
+  alias Inmana.{Repo, Supply}
 
   def call(params) do 
     params
-    |> Restaurant.changeset()
+    |> Supply.changeset()
     |> Repo.insert()
     |> handle_insert()
   end
 
-  defp handle_insert({:ok, %Restaurant{}} = result), do: result
+  defp handle_insert({:ok, %Supply{}} = result), do: result
   defp handle_insert({:error, result}) do
     {:error, %{result: result, status: :bad_request}}
   end
