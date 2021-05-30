@@ -1,6 +1,6 @@
 defmodule Inmana.Supplies.ExpiryNotification do
   @moduledoc """
-    Sends expiration email to registered restaurants
+    Sends expiration email to registered restaurants concorrently
   """
 
   alias Inmana.Mailer
@@ -9,11 +9,14 @@ defmodule Inmana.Supplies.ExpiryNotification do
   def send do
     data = GetByExpiration.call()
 
-    Enum.each(data, fn {to_email, supplies} -> 
-      to_email
-      |> ExpirationEmail.create(supplies)
-      |> Mailer.deliver_later!()
-    end)
+    data
+    |> Task.async_stream(fn {email, supps} -> send_email(email, supps) end)
+    |> Stream.run()
   end
-  
+
+  def send_email(to_email, supplies) do
+    to_email
+    |> ExpirationEmail.create(supplies)
+    |> Mailer.deliver_later!()
+  end
 end
