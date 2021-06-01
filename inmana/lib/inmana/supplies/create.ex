@@ -1,8 +1,9 @@
 
 defmodule Inmana.Supplies.Create do
   @moduledoc """
-    Create a restuarant in the database
+  Create a restuarant in the database
   """
+
   alias Inmana.{Repo, Supply}
 
   def call(params) do 

@@ -1,7 +1,7 @@
 defmodule Inmana.Supplies.GetByExpiration do
   @moduledoc """
-    Queries the database for supplies 
-    that will expire in the current week
+  Queries the database for supplies 
+  that will expire in the current week
   """
 
   import Ecto.Query

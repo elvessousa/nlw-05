@@ -1,6 +1,6 @@
 defmodule Inmana.Supplies.Scheduler do
   @moduledoc """
-    Schedules emails using a GenServer
+  Schedules emails using a GenServer
   """
 
   use GenServer

@@ -1,7 +1,7 @@
 defmodule Inmana.Restaurant do
   @moduledoc """
-    Creates a schema for the restaurants table.
-    variables starting with @ are like class properties.
+  Creates a schema for the restaurants table.
+  variables starting with @ are like class properties.
   """
 
   use Ecto.Schema

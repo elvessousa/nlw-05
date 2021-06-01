@@ -1,7 +1,8 @@
 defmodule Inmana.Supplies.ExpirationEmail do
   @moduledoc """
-    Creates the email notification body
+  Creates the email notification body
   """
+
   import Bamboo.Email
   alias Inmana.Supply
 
@@ -29,5 +30,4 @@ defmodule Inmana.Supplies.ExpirationEmail do
       "- Description: #{description} \n 
       - Expiration Date: #{expiration_date}, Responsible: #{responsible}\n\n"
   end
-  
 end

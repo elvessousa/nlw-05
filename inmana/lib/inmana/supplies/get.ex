@@ -1,7 +1,7 @@
 
 defmodule Inmana.Supplies.Get do
   @moduledoc """
-    Create a restuarant in the database
+  Create a restuarant in the database
   """
 
   alias Inmana.{Repo, Supply}

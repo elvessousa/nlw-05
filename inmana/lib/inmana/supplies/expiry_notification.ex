@@ -1,6 +1,6 @@
 defmodule Inmana.Supplies.ExpiryNotification do
   @moduledoc """
-    Sends expiration email to registered restaurants concorrently
+  Sends expiration email to registered restaurants concorrently
   """
 
   alias Inmana.Mailer

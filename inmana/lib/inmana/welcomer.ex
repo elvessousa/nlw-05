@@ -1,4 +1,7 @@
 defmodule Inmana.Welcomer do
+  @moduledoc """
+  Nothing important
+  """
 
   def welcome(%{"name" => name, "age" => age}) do
     age = String.to_integer(age)
